@@ -5,6 +5,19 @@ export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const handleLogin = () => {
+    // Add your login logic here
+    if (!email || !password) {
+      alert('Please fill in all fields');
+      return;
+    }
+    
+    // TODO: Implement actual login authentication
+    console.log('Logging in with:', { email, password });
+    // On successful login, you might want to:
+    // navigation.navigate('Home');
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Login</Text>
@@ -26,7 +39,10 @@ export default function LoginScreen({ navigation }) {
         secureTextEntry
       />
       
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity 
+        style={styles.button} 
+        onPress={handleLogin}
+      >
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
       

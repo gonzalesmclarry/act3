@@ -35,7 +35,10 @@ export default function RegisterScreen({ navigation }) {
         secureTextEntry
       />
       
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity 
+        style={[styles.button, { opacity: 0.5 }]} 
+        disabled={true}
+      >
         <Text style={styles.buttonText}>Register</Text>
       </TouchableOpacity>
       

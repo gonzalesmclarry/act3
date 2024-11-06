@@ -21,12 +21,12 @@ export default function RecoveryScreen({ navigation }) {
         autoCapitalize="none"
       />
       
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Send Reset Link</Text>
+      <TouchableOpacity style={[styles.button, styles.buttonDisabled]}>
+        <Text style={[styles.buttonText, styles.buttonTextDisabled]}>Send Reset Link</Text>
       </TouchableOpacity>
       
-      <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-        <Text style={styles.link}>Back to Login</Text>
+      <TouchableOpacity>
+        <Text style={[styles.link, styles.linkDisabled]}>Back to Login</Text>
       </TouchableOpacity>
     </View>
   );
@@ -71,5 +71,14 @@ const styles = StyleSheet.create({
     color: '#007AFF',
     textAlign: 'center',
     marginTop: 10,
+  },
+  buttonDisabled: {
+    backgroundColor: '#ccc',
+  },
+  buttonTextDisabled: {
+    color: '#666',
+  },
+  linkDisabled: {
+    color: '#999',
   },
 }); 
